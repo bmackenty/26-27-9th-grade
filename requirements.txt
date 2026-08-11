@@ -12,7 +12,7 @@
 #   2. Install everything on this list:     pip install -r requirements.txt
 #
 # WHY THE VERSION NUMBERS
-# "Flask==3.0.3" means "exactly version 3.0.3". Pinning versions means every
+# "Flask==3.1.3" means "exactly version 3.1.3". Pinning versions means every
 # student in the class runs identical software, so when something breaks it
 # breaks the same way for everyone. That makes it far easier to help you.
 #
@@ -22,27 +22,44 @@
 # it. That is the whole idea.
 #
 # Lines starting with # are comments and are ignored by pip.
+# WHICH PYTHON VERSION
+# These versions are tested against Python 3.11 through 3.13. If you built your
+# virtual environment with a very new Python (3.14 or later) and get an error
+# mentioning "__firstlineno__" the moment SQLAlchemy is imported, the library is
+# older than your Python. Fix it by upgrading:
+#
+#     pip install --upgrade -r requirements.txt
+#
+# If that still fails, rebuild the environment on Python 3.11, which is the
+# version this course is tested on:
+#
+#     deactivate
+#     rm -rf venv
+#     python3.11 -m venv venv
+#     source venv/bin/activate
+#     pip install -r requirements.txt
+#
 # ============================================================================
 
 
 # --- Web framework -----------------------------------------------------------
 # Flask turns Python functions into web pages. It listens for a browser request
 # and sends back a response.
-Flask==3.0.3
+Flask==3.1.3
 
 
 # --- Database ----------------------------------------------------------------
 # SQLAlchemy lets you work with a database using Python objects instead of
 # writing SQL strings by hand. Flask-SQLAlchemy wires it into Flask.
-SQLAlchemy==2.0.30
+SQLAlchemy==2.0.51
 Flask-SQLAlchemy==3.1.1
 
 # PyMySQL is the driver that lets Python talk to a MySQL server. You do not
 # need it for SQLite, but you will need it when we connect to the school
 # database later in Unit 3. Installing it now saves a step then.
-PyMySQL==1.1.1
+PyMySQL==1.2.0
 
 
 # --- Testing -----------------------------------------------------------------
 # pytest runs the files in tests/ and reports what passed and what failed.
-pytest==8.2.2
+pytest==9.1.1
