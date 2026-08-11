@@ -1,0 +1,68 @@
+<!--
+  base.html  --  the shared skeleton for every page.
+
+  Unit 3.
+
+  THE PROBLEM THIS SOLVES
+  Every page needs the same navigation bar, the same stylesheet link, the same
+  footer. Copying that into every file means changing one link later requires
+  editing every single page, and you will miss one.
+
+  THE SOLUTION: TEMPLATE INHERITANCE
+  This file holds everything shared. Other templates say "I extend base.html"
+  and fill in only the parts that differ.
+
+  The curly-brace marks below are Jinja, the template language Flask uses:
+{% raw %}
+      {% block name %}     a hole another template can fill
+      {{ variable }}       print the value of a variable here
+      {# comment #}        a note that never reaches the browser
+{% endraw %}
+  Those four lines are wrapped in a "raw" block. Without it, Jinja would try to
+  RUN the examples instead of showing them, and the page would break -- even
+  though they sit inside an HTML comment. Jinja reads the whole file before the
+  browser ever sees it, so an HTML comment hides nothing from it.
+
+  And note: plain HTML comments like this one DO reach the browser. Anyone can
+  read them with "View Source". Never put anything private in one.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- This line makes the page usable on a phone. Without it, mobile browsers
+       pretend to be a desktop and everything looks tiny. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- {{ title }} is replaced by whatever the route passed as title=... -->
+  <title>{{ title }} · DSTP</title>
+
+  <!-- url_for() builds the correct address to a file in static/. Writing
+       "/static/style.css" by hand usually works but breaks the moment the app
+       moves somewhere else. Let Flask work it out. -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header>
+    <h1>DSTP · Grade 9</h1>
+    <nav>
+      <!-- url_for('home') means "the address of the function named home".
+           If you later change the route from "/" to "/start", this link fixes
+           itself. Hard-coded links do not. -->
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('student_list') }}">Students</a>
+    </nav>
+  </header>
+
+  <main>
+    {# Everything a child template puts in its "content" block lands here. #}
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <p>American School of Warsaw · Course starter repository</p>
+  </footer>
+
+</body>
+</html>

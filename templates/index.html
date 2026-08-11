@@ -1,0 +1,25 @@
+<!--
+  index.html  --  the home page.
+
+  It extends base.html, so it does not repeat the navigation or the footer. It
+  only supplies what makes this page different: the contents of "content".
+-->
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>{{ message }}</h2>
+
+  <p>
+    If you can read this in a browser, then Python, Flask, and your virtual
+    environment are all working. That is the whole point of this page.
+  </p>
+
+  <p>
+    Next: open <code>app.py</code> in VS Code and find the function called
+    <code>home()</code>. The words you are reading come from
+    <code>templates/index.html</code>; the value of <code>message</code> comes
+    from <code>app.py</code>. Change the message, save, and refresh this page.
+  </p>
+
+  <p><a href="{{ url_for('student_list') }}">See the student list &rarr;</a></p>
+{% endblock %}

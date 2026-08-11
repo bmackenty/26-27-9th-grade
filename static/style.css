@@ -1,0 +1,93 @@
+/*
+  style.css  --  how the pages look.
+
+  Unit 3.
+
+  This is CSS, not Python. A comment in CSS is wrapped in slash-star and
+  star-slash, like this one. The # comment style does NOT work here.
+
+  HOW A CSS RULE IS BUILT
+
+      selector {
+        property: value;
+      }
+
+  The selector picks which elements to affect. Everything in the curly braces
+  is applied to them. Every line ends with a semicolon.
+
+  Deliberately kept small. In Unit 3 you will change it and see what happens --
+  which is genuinely the best way to learn CSS.
+*/
+
+/* "body" selects the whole page, and most things inherit from it. Setting the
+   font here means you do not have to set it on every heading and paragraph. */
+body {
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;   /* space between lines. 1.6 means 1.6x the font size. */
+  margin: 0;          /* browsers add a default margin; this removes it */
+  color: #222;        /* near-black. Pure #000 on white is harsh to read. */
+  background: #fff;
+}
+
+/* A colour written as #1a7a8a is hexadecimal: two digits each for red, green,
+   and blue. Higher numbers mean more of that colour. */
+header {
+  background: #1a4a55;
+  color: #fff;
+  padding: 1rem 2rem;   /* 1rem top and bottom, 2rem left and right */
+}
+
+header h1 {
+  margin: 0 0 0.5rem 0;   /* top, right, bottom, left -- clockwise from the top */
+  font-size: 1.4rem;
+}
+
+/* "header nav a" means: an <a> inside a <nav> inside a <header>. Spaces
+   between names mean "inside". Being specific like this stops the rule leaking
+   out and restyling every link on the site. */
+header nav a {
+  color: #9fe0ec;
+  margin-right: 1rem;
+  text-decoration: none;   /* removes the underline */
+}
+
+/* :hover applies only while the mouse is over the element. */
+header nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 2rem;
+  max-width: 900px;   /* very long lines of text are hard to read */
+}
+
+table {
+  border-collapse: collapse;   /* single shared borders instead of doubled ones */
+  width: 100%;
+}
+
+/* A comma means "and also". This rule applies to both th and td. */
+th, td {
+  border: 1px solid #ddd;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+th {
+  background: #f2f7f8;
+}
+
+code {
+  background: #f4f4f4;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+footer {
+  border-top: 1px solid #ddd;
+  padding: 1rem 2rem;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: #666;
+}

@@ -1,0 +1,58 @@
+<!--
+  students.html  --  lists every student from the database.
+
+  This template receives a Python LIST of Student objects, named "students",
+  from the student_list() route in app.py.
+-->
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Students</h2>
+
+  <!-- An if/else in the template. If the list is empty, show advice instead of
+       an empty table. Deciding what an empty result should look like is part of
+       building the page, not an afterthought. -->
+  {% if students %}
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Grade</th>
+          <th>Pathway</th>
+          <th>Projects</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- A for loop, exactly like a Python for loop. Everything between the
+             for tag below and its matching endfor is repeated once per student.
+             (Writing those tag names out with their braces here would break the
+             page: Jinja would try to run them. See the note in base.html.) -->
+        {% for student in students %}
+          <tr>
+            <!-- student.name works because each item is a Student object and
+                 name is one of its columns, defined in models.py. -->
+            <td>{{ student.name }}</td>
+            <td>{{ student.grade_level }}</td>
+
+            <!-- "or" supplies a fallback when pathway is empty (None). Without
+                 it the cell would print the word "None", which looks like a
+                 bug to anyone reading the page. -->
+            <td>{{ student.pathway or "Not chosen yet" }}</td>
+
+            <!-- student.projects comes from the relationship in models.py.
+                 The | is a FILTER: it passes the value on the left through the
+                 function on the right. Here, length counts the list. -->
+            <td>{{ student.projects | length }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  {% else %}
+    <p>
+      There are no students in the database yet. Build it by running:
+      <code>python data_work/setup_database.py</code>
+    </p>
+  {% endif %}
+{% endblock %}
