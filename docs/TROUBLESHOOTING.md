@@ -119,3 +119,45 @@ Before asking, be ready to say:
 3. What you have already tried.
 
 Working that out is usually where the answer turns up anyway.
+
+---
+
+## `TypeError: Can't replace canonical symbol for '__firstlineno__'`
+
+This appears the moment SQLAlchemy is imported, and the traceback is long and
+alarming. It is not your code.
+
+Python 3.13 added a hidden attribute called `__firstlineno__` to every class.
+Older versions of SQLAlchemy did not expect it and crash on import. Your Python
+is newer than your library.
+
+**Fix — upgrade the packages:**
+
+```bash
+source venv/bin/activate
+pip install --upgrade -r requirements.txt
+python app.py
+```
+
+**If it still fails — rebuild on Python 3.11:**
+
+```bash
+deactivate
+rm -rf venv
+python3.11 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+Check which Python your environment is actually using at any time with:
+
+```bash
+python --version
+```
+
+**Worth noticing:** the traceback names every file it passed through on the way
+to the error, ending with the one that actually failed —
+`sqlalchemy/util/langhelpers.py`. None of those paths are in your project
+folder. When every file in a traceback lives inside `venv/`, the problem is the
+environment, not your code. That single observation will save you a lot of time
+this year.
