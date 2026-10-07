@@ -48,8 +48,4 @@ If starting on a new computer, create the environment first with `python3 -m ven
 
 The JSON key is `item` in both Python and JavaScript. Random results can repeat.
 
-## For the teacher: upload to GitHub
 
-Extract this ZIP and upload the `flask_lesson_5` folder into your repository using Add file → Upload files. Keep its structure intact; students start with this README. Upload the extracted files, not only the ZIP, so each source file is easy to open and copy. This repository is a source-code handout; GitHub Pages does not run Flask.
-
-No virtual environment, student data, or account credentials are included.
