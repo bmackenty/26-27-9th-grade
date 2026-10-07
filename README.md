@@ -1,182 +1,55 @@
-# DSTP Grade 9 — Course Starter Repository
+# Flask Lesson 5 — start here
 
-**Digital Systems, Technology & Programming · American School of Warsaw**
-Teacher: Mr. MacKenty · bmackenty@aswarsaw.org
+The files at the top of this folder are the **completed Lesson 4 application**.
+Start from those files even if you did not finish Lesson 4. Then follow [Lesson 5](LESSON_5.md).
 
-Read this file **before** you read any other documentation. Everything here is
-specific to our course. When Python's official docs and this README disagree
-about how *our* course works, this README wins.
+## Copy the completed Lesson 4 files manually
 
----
+1. Open your existing `my_first_web_app` folder in VS Code.
+2. Back up your own `app.py` and `static` folder first, so you can restore your theme later.
+3. On GitHub, open each file below. Use **Raw** or the copy button to copy only the code, not the GitHub page. Select all the old code in the matching local file and paste the complete replacement. Save each file.
 
-## What this repository is
+| Open on GitHub | Paste into your local file |
+|---|---|
+| [app.py](app.py) | `my_first_web_app/app.py` |
+| [index.html](static/index.html) | `my_first_web_app/static/index.html` |
+| [style.css](static/style.css) | `my_first_web_app/static/style.css` |
+| [script.js](static/script.js) | `my_first_web_app/static/script.js` |
 
-A skeleton. It runs, but it does not do very much yet. Over the year you will
-fill it in, break it, fix it, and make it yours.
+Create missing files or the `static` folder if needed. Keep your existing `.venv` folder. Do not put project files inside `.venv`. There is no need to clone, pull, or reinstall Flask if your environment already works.
 
-Every file in this repository is commented far more heavily than professional
-code normally is. That is deliberate. The comments are teaching material. Read
-them. When you understand a comment well enough that it feels obvious, you have
-learned that thing.
+## Run your project
 
----
+Open a terminal in `my_first_web_app`. Activate the environment:
 
-## Setup — do this once
-
-You need Python 3.11 or higher, Git, and VS Code. If you do not have those yet,
-follow the setup guide handed out in Week 1 before continuing.
-
-### 1. Clone this repository
-
+macOS:
 ```bash
-cd ~/Documents/grade9-design
-git clone https://github.com/bmackenty/dstp-starter.git
-cd dstp-starter
+source .venv/bin/activate
 ```
-
-### 2. Create a virtual environment
-
-A virtual environment is a private box of Python packages that belongs to this
-project only. Without it, installing something for this course could break a
-different project on your laptop.
-
+Windows **Command Prompt**:
+```bat
+.venv\Scripts\activate.bat
+```
+Then:
 ```bash
-python3 -m venv venv
+python -m flask --app app run --debug
 ```
+Open **http://127.0.0.1:5000/static/index.html**. Use this Flask address, not Live Server, GitHub Pages, or a `file:///` address. If port 5000 is busy, add `--port 5001` and use 5001 in the address.
 
-This creates a folder called `venv`. You only do this **once**.
+If starting on a new computer, create the environment first with `python3 -m venv .venv` (macOS) or `py -3 -m venv .venv` (Windows), activate it, then run `python -m pip install Flask`.
 
-### 3. Activate the virtual environment
+## What is in this folder?
 
-```bash
-source venv/bin/activate
-```
+- Top-level `app.py` and `static/`: completed Lesson 4 baseline.
+- [LESSON_5.md](LESSON_5.md): student instructions, 60 minutes.
+- [lesson-5-snippets](lesson-5-snippets): small additions used during the lesson.
+- [lesson-5-reference](lesson-5-reference): complete expected code after Lesson 5, before personalisation. Compare files if you get stuck; do not copy this version before starting the activities.
+- [TEACHER_NOTES.md](TEACHER_NOTES.md): pacing, answers, and checks.
 
-Your terminal prompt should now start with `(venv)`. You must do this **every
-time** you open a new terminal window. If you forget, packages will appear to be
-missing even though you installed them.
+The JSON key is `item` in both Python and JavaScript. Random results can repeat.
 
-To leave the virtual environment later: `deactivate`
+## For the teacher: upload to GitHub
 
-### 4. Install the packages this project needs
+Extract this ZIP and upload the `flask_lesson_5` folder into your repository using Add file → Upload files. Keep its structure intact; students start with this README. Upload the extracted files, not only the ZIP, so each source file is easy to open and copy. This repository is a source-code handout; GitHub Pages does not run Flask.
 
-```bash
-pip install -r requirements.txt
-```
-
-### 5. Check that it worked
-
-```bash
-python app.py
-```
-
-Then open http://localhost:5000 in your browser. You should see a page that says
-the starter is running. Press `Control + C` in the terminal to stop the server.
-
----
-
-## Every class — your daily routine
-
-```bash
-cd ~/Documents/grade9-design/dstp-starter
-source venv/bin/activate      # start of session
-code .                        # open VS Code
-git pull                      # get any updates from the teacher
-```
-
-At the end of the session:
-
-```bash
-git add .
-git commit -m "Add function that validates student age"
-git push
-```
-
-Commit messages describe **what changed**. "update", "stuff", and "asdf" are not
-commit messages.
-
----
-
-## What is in here
-
-| Path | What it is | When you use it |
-| --- | --- | --- |
-| `app.py` | A tiny Flask web application | Unit 1 (look), Unit 3 (edit) |
-| `config.py` | Settings — database location, secret key | Unit 3 |
-| `models.py` | SQLAlchemy models — Python classes that become database tables | Unit 3 |
-| `hello.py` | Your very first program | Unit 1, Week 1 |
-| `python_basics/` | Small, heavily commented example programs | Units 1–2 |
-| `data_work/` | Lists, dicts, CSV files, SQL, the ORM, binary | Unit 3 |
-| `data/` | Sample data and the SQL schema | Unit 3 |
-| `templates/` | HTML pages that Flask fills in | Unit 3 |
-| `static/` | CSS | Unit 3 |
-| `tests/` | Automated tests written with pytest | Units 1–3 |
-| `docs/` | AI use log template and the scope statement template | All units |
-
----
-
-## Running the example programs
-
-Each example is a normal Python file. Run one like this:
-
-```bash
-python python_basics/01_variables.py
-```
-
-**Before you run any example, predict what it will print.** Write your
-prediction down. Then run it. When your prediction is wrong, that gap is the
-most valuable thing in the lesson — do not skip past it.
-
----
-
-## Running the tests
-
-Tests are code that checks other code. If a test fails, something is broken.
-
-```bash
-pytest
-```
-
-For more detail about what passed and what failed:
-
-```bash
-pytest -v
-```
-
-Some tests are marked as *expected to fail* until you write the missing code.
-That is normal. Your job in several exercises is to make a failing test pass.
-
----
-
-## The database
-
-By default this project uses **SQLite**, a database that lives in a single file
-(`data/dstp.db`). It needs no server and no password, so it always works.
-
-Later in Unit 3 we switch to the **school MySQL server**. Nothing in your code
-has to change except one line in `config.py`. That is one of the reasons we use
-SQLAlchemy — see the comments in `models.py`.
-
-To create the database and load the sample data:
-
-```bash
-python data_work/setup_database.py
-```
-
----
-
-## Getting help
-
-1. Read the error message. All of it. The last line names the problem.
-2. Read the comments in the file you are working on.
-3. Ask a classmate — explain your problem out loud.
-4. Ask Mr. MacKenty.
-5. AI, **only in the mode the current unit allows** (see `docs/AI_USE_LOG.md`).
-
----
-
-## Academic honesty
-
-Code you cannot explain is code you did not write, no matter who typed it. Every
-build session in this course ends with someone asking you what your code does.
-Write code you can defend.
+No virtual environment, student data, or account credentials are included.
