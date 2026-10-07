@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef2f7;
+    color: #1f2937;
+    line-height: 1.6;
+    margin: 0;
+    padding: 24px;
+}
+
+h1 {
+    color: #1e3a8a;
+}
+
+.card {
+    background-color: white;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 24px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+}
+
+button {
+    background-color: #1e40af;
+    color: white;
+    font-size: 18px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #172554;
+}
+
+button:focus-visible {
+    outline: 3px solid #111827;
+    outline-offset: 4px;
+}
+
+#result {
+    background-color: #dbeafe;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Lesson 5: add these rules AFTER your Lesson 4 styles. */
+* {
+    box-sizing: border-box;
+}
+
+.hero {
+    background: linear-gradient(135deg, #172554, #6d28d9);
+    color: white;
+    padding: 28px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    color: white;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #172554;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.card {
+    box-shadow: 0 12px 32px #1725541a;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 16px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    font: inherit;
+    border: 2px solid #64748b;
+    border-radius: 8px;
+    background-color: white;
+    color: #1f2937;
+}
+
+input:focus-visible, select:focus-visible {
+    outline: 3px solid #1e40af;
+    outline-offset: 3px;
+}
+
+.hint {
+    font-size: 14px;
+    color: #475569;
+    margin-top: 4px;
+}
+
+form button {
+    margin-top: 20px;
+}
+
+button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+.result-card {
+    margin-top: 24px;
+    padding: 20px;
+    border: 2px solid #1e40af;
+    border-radius: 16px;
+    background-color: #dbeafe;
+    overflow-wrap: anywhere;
+}
+
+.result-card[data-theme="fire"] {
+    background-color: #ffedd5;
+    border-color: #9a3412;
+}
+
+.result-card[data-theme="forest"] {
+    background-color: #dcfce7;
+    border-color: #166534;
+}
+
+/* Keep the result paragraph transparent so the chosen card colour shows. */
+#result {
+    background-color: transparent;
+    padding: 0;
+}

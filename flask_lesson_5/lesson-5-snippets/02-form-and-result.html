@@ -1,0 +1,25 @@
+<form id="generator-form">
+    <h2>Design your result card</h2>
+
+    <label for="nickname">Invented nickname (required)</label>
+    <input type="text" id="nickname" name="nickname"
+           placeholder="For example, StarFox" required maxlength="20"
+           aria-describedby="nickname-help">
+    <p id="nickname-help" class="hint">Use a made-up name, up to 20 characters.</p>
+
+    <label for="theme">Card colour theme</label>
+    <select id="theme" name="theme">
+        <option value="ice">Ice blue</option>
+        <option value="fire">Fire orange</option>
+        <option value="forest">Forest green</option>
+    </select>
+
+    <button type="submit" id="generate-button">Forge my item</button>
+</form>
+
+<section id="result-card" class="result-card" data-theme="ice"
+         aria-labelledby="result-heading">
+    <span id="theme-badge" class="badge">ICE BLUE</span>
+    <h2 id="result-heading">Your creation</h2>
+    <p id="result" aria-live="polite">Your item will appear here.</p>
+</section>
