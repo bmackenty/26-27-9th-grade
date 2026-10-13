@@ -29,19 +29,7 @@ By the end, you should be able to:
 
 **File: your existing project. No code changes yet.**
 
-**1.1** Open your my_first_web_app folder in VS Code. Make a backup of app.py and static before changing them.
-
-**1.2** Open Terminal → New Terminal. Activate your existing environment:
-
-macOS:
-```bash
-source .venv/bin/activate
-```
-
-Windows **Command Prompt**:
-```bat
-.venv\Scripts\activate.bat
-```
+**1.1** Open your my_first_web_app folder in VS Code. 
 
 **1.3** Start Flask:
 ```bash
