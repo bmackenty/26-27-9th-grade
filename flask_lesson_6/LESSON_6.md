@@ -48,23 +48,8 @@ Create a missing file or folder using exactly the name shown. `static` must be b
 
 ### 0C — Run the right project
 
-Open a terminal in the folder containing the `app.py` you just updated. Activate your existing environment. If it is named `.venv`, use the appropriate command:
-
-Windows PowerShell:
-```powershell
-.\.venv\Scripts\Activate.ps1
-```
-
-macOS or Linux:
+run:
 ```bash
-source .venv/bin/activate
-```
-
-If your environment is named `venv`, substitute `venv` for `.venv`. If it is elsewhere, use your established activation procedure. If activation fails, ask for help instead of changing security settings.
-
-Then run:
-```bash
-python -m pip install -r requirements.txt
 python -m flask --app app run --debug
 ```
 
