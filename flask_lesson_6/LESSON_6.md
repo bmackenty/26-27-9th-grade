@@ -28,13 +28,7 @@ Allow approximately 60–90 minutes. The times are guides, not deadlines.
 
 Even if Lesson 5 was unfinished, these steps give you a complete working starting point.
 
-### 0A — Save your own work
 
-1. In your editor, save all open files.
-2. Stop Flask by clicking its terminal and pressing **Ctrl+C**.
-3. In your existing project, make a folder named `backup_before_lesson6`.
-4. **Copy**, rather than move, your current `app.py` and `static` folder into it. Keep your original files in place for the next step. Your personal changes are now available to copy back later.
-5. Keep your existing virtual environment. Do not copy, delete, or upload it.
 
 ### 0B — Replace the complete files
 
