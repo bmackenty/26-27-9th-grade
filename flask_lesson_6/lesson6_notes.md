@@ -40,17 +40,29 @@ My intended user is:
 ## Explain
 
 The banner link connects to:
+
 The gallery does not update when I submit because:
+
 The help works without new JavaScript because:
+
 HTML controls ___; CSS controls ___. My examples are:
+
 A class can be reused because ___; an ID should be unique because ___:
+
 My best design decision helps the user by:
+
 My next chunk or improvement is:
+
 
 ## Optional extension
 
 I chose:
+
 I predicted:
+
 I changed:
+
 I tested:
+
 I found:
+
