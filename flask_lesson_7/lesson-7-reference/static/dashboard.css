@@ -1,0 +1,27 @@
+/* Our custom rules load AFTER AdminLTE. Do not edit vendor files. */
+:root { --forge-accent: #6d28d9; }
+body { font-family: system-ui, sans-serif; }
+.mission-banner { background: linear-gradient(125deg, #172554, var(--forge-accent), #9d174d); color: white; border-radius: 22px; padding: clamp(24px, 4vw, 56px); margin-bottom: 12px; }
+.mission-banner h1 { font-size: clamp(2rem, 4vw, 3.6rem); font-weight: 800; max-width: 700px; margin: 18px 0; }
+.mission-banner p { max-width: 560px; font-size: 1.1rem; }
+.card { border-radius: 16px; overflow: hidden; }
+.card-header { padding: 18px 22px; }
+.card-title { font-size: 1.2rem; font-weight: 700; }
+.card-body { padding: 24px; }
+.small-box { border-radius: 16px; padding: 10px; }
+.small-box h2 { font-size: 2.4rem; font-weight: 800; }
+.small-box p { margin-bottom: 6px; }
+.forge-result { border: 2px solid #0284c7; background: #e0f2fe; color: #0c4a6e; border-radius: 12px; padding: 22px; }
+.forge-result[data-theme="fire"] { border-color: #c2410c; background: #ffedd5; color: #7c2d12; }
+.forge-result[data-theme="forest"] { border-color: #15803d; background: #dcfce7; color: #14532d; }
+.forge-result h3 { margin-top: 12px; font-size: 1.4rem; }
+.forge-result p { margin-bottom: 0; overflow-wrap: anywhere; }
+.sidebar-note { color: #cbd5e1; padding: 22px; }
+progress { display: block; width: 100%; height: 20px; accent-color: var(--forge-accent); }
+details { padding: 14px 0; border-bottom: 1px solid #ddd; }
+summary { cursor: pointer; font-weight: 600; }
+details p { margin-top: 12px; }
+:focus-visible { outline: 3px solid #d97706 !important; outline-offset: 3px; }
+.skip-link { position: absolute; left: 12px; top: -100px; z-index: 2000; background: white; padding: 12px; }
+.skip-link:focus { top: 12px; }
+section, header { scroll-margin-top: 20px; }
