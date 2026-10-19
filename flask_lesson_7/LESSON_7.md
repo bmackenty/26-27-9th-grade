@@ -157,7 +157,7 @@ Keep Flask running. Copy these from the lesson folder into your working project:
 | [static/dashboard.html](static/dashboard.html) | `static/dashboard.html` | Copy whole file |
 | [static/dashboard.css](static/dashboard.css) | `static/dashboard.css` | Copy whole file |
 | [static/dashboard.js](static/dashboard.js) | `static/dashboard.js` | Copy whole file |
-| `static/vendor` folder | `static/vendor` folder | Copy the entire folder, including licences |
+| [static/vendor folder](static/vendor/) | `static/vendor` folder | Copy the entire folder, including licences |
 
 **Copy `vendor` using your file manager. Do not type or copy-and-paste the minified libraries.** The downloaded folder already contains them.
 
