@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forge Control | Lesson 7</title>
+  <link rel="stylesheet" href="/static/vendor/adminlte.min.css">
+  <link rel="stylesheet" href="/static/dashboard.css">
+</head>
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+<a class="skip-link" href="#main-content">Skip to dashboard</a>
+<div class="app-wrapper">
+  <nav class="app-header navbar navbar-expand bg-body" aria-label="Top navigation">
+    <div class="container-fluid">
+      <button class="btn btn-outline-secondary" type="button" data-lte-toggle="sidebar" aria-label="Toggle navigation sidebar">Menu</button>
+      <span class="navbar-text ms-3">FORGE LAB / LESSON 7</span>
+      <a class="btn btn-outline-primary ms-auto" href="/static/index.html">Lesson 6 page</a>
+    </div>
+  </nav>
+  <aside class="app-sidebar bg-dark shadow" data-bs-theme="dark">
+    <div class="sidebar-brand"><a href="#main-content" class="brand-link"><span class="brand-text fw-bold">FORGE CONTROL</span></a></div>
+    <div class="sidebar-wrapper">
+      <nav aria-label="Dashboard sections">
+        <ul class="nav sidebar-menu flex-column">
+          <li class="nav-item"><a href="#overview" class="nav-link"><p>01 / Overview</p></a></li>
+          <li class="nav-item"><a href="#workshop" class="nav-link"><p>02 / Live workshop</p></a></li>
+          <li class="nav-item"><a href="#collection" class="nav-link"><p>03 / Collection</p></a></li>
+          <li class="nav-item"><a href="#field-guide" class="nav-link"><p>04 / Field guide</p></a></li>
+        </ul>
+      </nav>
+      <p class="sidebar-note">A front-end dashboard connected to your Flask generator.</p>
+    </div>
+  </aside>
+  <main class="app-main" id="main-content" tabindex="-1">
+    <div class="app-content-header"><div class="container-fluid">
+      <!-- START HERO: personalise these words -->
+      <header class="mission-banner" id="overview">
+        <span class="badge text-bg-light">YOUR CREATIVE COMMAND CENTRE</span>
+        <h1>Make extraordinary things.</h1>
+        <p>One workshop. Unlimited discoveries. Your next creation starts here.</p>
+        <a href="#workshop" class="btn btn-light">Enter the workshop</a>
+        <button type="button" class="btn btn-light ms-2"
+        data-bs-toggle="modal" data-bs-target="#design-modal">
+  About this design
+</button>
+      </header>
+      <!-- END HERO -->
+    </div></div>
+    <div class="app-content"><div class="container-fluid">
+      <!-- START LESSON 8 NOTICE -->
+<div class="alert alert-info mb-4">
+  <strong>Workshop notice:</strong> These featured projects are fictional examples.
+  The generator below still creates a new item when you submit its form.
+</div>
+<!-- END LESSON 8 NOTICE -->
+      <!-- START STATS: only the first number is live -->
+      <section class="row g-3 mb-4" aria-label="Workshop statistics">
+        <div class="col-12 col-md-4"><div class="small-box text-bg-primary h-100 mb-0"><div class="inner">
+          <h2 id="session-count">0</h2><p>Items forged on this page</p><small>Live browser count; resets on refresh</small>
+        </div></div></div>
+        <div class="col-12 col-md-4"><div class="small-box text-bg-success h-100 mb-0"><div class="inner">
+          <h2>3</h2><p>Featured discoveries</p><small>Static sample collection below</small>
+        </div></div></div>
+        <div class="col-12 col-md-4"><div class="small-box text-bg-dark h-100 mb-0"><div class="inner">
+          <h2>25</h2><p>Possible item names</p><small>5 adjectives x 5 items in Python</small>
+        </div></div></div>
+      </section>
+      <!-- END STATS -->
+      <section id="workshop" class="row g-4 mb-4" aria-label="Live workshop">
+        <div class="col-12 col-xl-7">
+          <div class="card card-primary card-outline h-100">
+            <div class="card-header"><h2 class="card-title">Live item generator</h2></div>
+            <div class="card-body">
+              <!-- START GENERATOR: keep the IDs -->
+              <form id="generator-form">
+                <label for="nickname" class="form-label">Invented nickname</label>
+                <input id="nickname" name="nickname" class="form-control mb-2" placeholder="For example, StarFox" required maxlength="20" aria-describedby="nickname-help">
+                <p id="nickname-help" class="form-text">Use a made-up name. It stays in this browser.</p>
+                <label for="theme" class="form-label">Result colour</label>
+                <select id="theme" name="theme" class="form-select mb-3">
+                  <option value="ice">Ice blue</option><option value="fire">Fire orange</option><option value="forest">Forest green</option>
+                </select>
+                <button id="generate-button" type="submit" class="btn btn-primary">Forge my item</button>
+              </form>
+              <section id="result-card" class="forge-result mt-4" data-theme="ice" aria-labelledby="result-heading">
+                <span id="theme-badge" class="badge text-bg-dark">ICE BLUE</span>
+                <h3 id="result-heading">Your creation</h3>
+                <p id="result" role="status">Your item will appear here.</p>
+              </section>
+              <!-- END GENERATOR -->
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-5">
+          <!-- START MISSION -->
+          <article class="card h-100">
+            <div class="card-header"><h2 class="card-title">Today's mission</h2></div>
+            <div class="card-body">
+              <span class="badge text-bg-warning mb-3">DESIGN CHALLENGE</span>
+              <h3>Build your own world.</h3>
+              <p>Keep the components you need. Change their content to match your theme.</p>
+              <ul><li>Choose a name and colour palette.</li><li>Generate an item using Python.</li><li>Explain one front-end change.</li></ul>
+              <label for="mission-progress" class="form-label">Sample mission progress: 60%</label>
+              <progress id="mission-progress" max="100" value="60">60%</progress>
+              <p class="text-secondary small">Example value typed into HTML; it does not track your work.</p>
+              <a href="#collection" class="btn btn-outline-primary">Explore the collection</a>
+            </div>
+          </article>
+          <!-- END MISSION -->
+        </div>
+      </section>
+      <!-- START LESSON 8 SHOWCASE -->
+<section class="mb-4" aria-labelledby="showcase-heading">
+  <h2 id="showcase-heading" class="h4 mb-3">Project showcase</h2>
+  <div class="row g-4">
+  <div class="col-12 col-md-6">
+    <article class="card showcase-card shadow-sm h-100">
+      <div class="card-body p-4">
+        <span class="badge text-bg-success mb-3">FEATURED</span>
+        <h3 class="card-title mb-3">Forest Observatory</h3>
+        <p>A quiet research station that catalogues imaginary discoveries.</p>
+        <ul class="list-group list-group-flush mb-3">
+          <li class="list-group-item">Type: fictional project</li>
+          <li class="list-group-item">Status: design example</li>
+        </ul>
+        <a href="#workshop" class="btn btn-outline-success">Try the generator</a>
+      </div>
+    </article>
+  </div>
+  <div class="col-12 col-md-6">
+    <article class="card showcase-card shadow-sm h-100">
+      <div class="card-body p-4">
+        <span class="badge text-bg-success mb-3">NEW IDEA</span>
+        <h3 class="card-title mb-3">Ocean Laboratory</h3>
+        <p>An underwater workshop that studies fictional sea creatures.</p>
+        <ul class="list-group list-group-flush mb-3">
+          <li class="list-group-item">Type: fictional project</li>
+          <li class="list-group-item">Status: design example</li>
+        </ul>
+        <a href="#workshop" class="btn btn-outline-success">Try the generator</a>
+      </div>
+    </article>
+  </div>
+  </div>
+</section>
+<!-- END LESSON 8 SHOWCASE -->
+      <!-- START COLLECTION -->
+      <section id="collection" class="card mb-4">
+        <div class="card-header"><h2 class="card-title">Featured collection</h2></div>
+        <div class="card-body">
+          <p>Static examples: these do not change when you generate an item.</p>
+          <div class="table-responsive">
+            <table class="table align-middle"><caption>Three fictional discoveries, written into this HTML file.</caption>
+              <thead><tr><th scope="col">Discovery</th><th scope="col">Origin</th><th scope="col">Collection</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Frozen Compass</th><td>North Observatory</td><td><span class="badge text-bg-primary">ICE</span></td></tr>
+                <tr><th scope="row">Ember Lantern</th><td>Cinder Workshop</td><td><span class="badge text-bg-danger">FIRE</span></td></tr>
+                <tr><th scope="row">Moss Crown</th><td>Ancient Grove</td><td><span class="badge text-bg-success">FOREST</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <!-- END COLLECTION -->
+      <!-- START HELP -->
+      <section id="field-guide" class="card mb-4">
+        <div class="card-header"><h2 class="card-title">Field guide: what is really happening?</h2></div>
+        <div class="card-body">
+          <details><summary>Which part is the back end?</summary><p>Python and Flask run in your terminal. GET /api/generate returns JSON containing an item. The browser fetches it.</p></details>
+          <details><summary>What does AdminLTE do?</summary><p>It supplies front-end styles and interface behaviour. It does not create accounts, save items, or provide admin permissions.</p></details>
+          <details><summary>Does this work without internet?</summary><p>After the files and Flask are installed, this dashboard uses local assets and a local Flask server. Keep Flask running.</p></details>
+        </div>
+      </section>
+      <!-- END HELP -->
+    </div></div>
+  </main>
+  <footer class="app-footer">Lesson 7 / Local assets / Fictional sample data / No saved history</footer>
+</div>
+<!-- START LESSON 8 MODAL -->
+<div class="modal fade" id="design-modal" tabindex="-1"
+     aria-labelledby="design-modal-title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="design-modal-title">About this design</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>This dashboard helps a fictional explorer find project ideas.</p>
+        <p>The green borders group the featured cards. The badges describe each example.</p>
+        <p>The cards contain sample text. They are not saved generator results.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Got it</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END LESSON 8 MODAL -->
+<script src="/static/vendor/bootstrap.bundle.min.js"></script>
+<script src="/static/vendor/adminlte.min.js"></script>
+<script src="/static/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+/* LESSON 8: styles for the new showcase only */
+:root {
+  --showcase-accent: #047857;
+  --showcase-surface: #ecfdf5;
+}
+.showcase-card {
+  border: 2px solid var(--showcase-accent);
+  background-color: var(--showcase-surface);
+  color: #172554;
+}
+.showcase-card .card-title {
+  float: none;
+}
+
