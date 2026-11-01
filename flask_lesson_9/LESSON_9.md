@@ -69,13 +69,9 @@ python -m flask --app app run --debug
 
 ### 1A. Get the lesson examples
 
-If your teacher gives you an extracted `flask_lesson_9` folder, open it and continue to 1B.
-
-Otherwise:
-
 1. Open the [class repository](https://github.com/bmackenty/26-27-9th-grade).
 2. On the repository's main page, click **Code → Download ZIP**.
-3. Extract it: Windows **Extract All**, or double-click on Mac.
+3. Extract it: just double-click on Mac.
 4. Open the extracted repository, then `flask_lesson_9`, then `add_to_static`.
 
 ### 1B. Copy only the new files
