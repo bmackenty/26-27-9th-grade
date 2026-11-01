@@ -38,8 +38,6 @@ Use [lesson9_notes.md](lesson9_notes.md): copy its headings into your usual clas
 
 | Terminal | Command |
 |---|---|
-| Windows PowerShell | `.venv\Scripts\Activate.ps1` |
-| Windows Command Prompt | `.venv\Scripts\activate.bat` |
 | macOS/Linux | `source .venv/bin/activate` |
 
 Use your actual environment name if different. If activation is blocked or the environment is missing, ask your teacher for setup help. Do not overwrite your project to solve an environment problem.
